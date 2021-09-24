@@ -31,7 +31,7 @@ function obtenerMascota(req, res, next) {
 function modificarMascota(req, res, next) {
   Mascota.findById(req.params.id)
     .then(mascota => {
-      if (!masctota) return res.sendStatus(401);
+      if (!mascota) return res.sendStatus(401);
       let nuevaInfo = req.body;
       mascota = { ...mascota, ...nuevaInfo };
       mascota.save();
